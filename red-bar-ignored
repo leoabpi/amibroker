@@ -1,0 +1,13 @@
+//Padrão da estratégia Red Bar Ignored de Oliver Velez
+
+Cond1 = MA ( Close, 8 ) > MA (ref( Close, -1), 8 ); //Média móvel de 8 ascendente
+Cond2 = MA ( Close, 20 ) > MA (ref( Close, -1), 20 ); //Média móvel de 20 ascendente
+Cond3 = MA ( Close, 8 ) > MA( Close, 20 ); //Média móvel de 8 acima da média móvel de 20
+
+//Ocorrência de pelo menos três candles verdes de alta em sequência, ocorre um candle vermelho de baixa
+Cond4 = Open > Close ;
+Cond5 = Ref ( Close, -1) > Ref ( Open, -1 );
+Cond6 = Ref ( Close, -2) > Ref ( Open, -2 );
+Cond7 = Ref ( Close, -3) > Ref ( Open, -3 );
+
+Filter = Cond1 and Cond2 and Cond3 and Cond4 and Cond5 and Cond6 and Cond7;
