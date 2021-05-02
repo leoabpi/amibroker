@@ -1,0 +1,2 @@
+# amibroker
+Códigos para Amibroker
